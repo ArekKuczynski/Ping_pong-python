@@ -90,6 +90,10 @@ class Data():
 #strategia gry
 class Game_strategy(ABC):
     @abstractmethod
+    def __str__(self) -> None:
+        pass
+    
+    @abstractmethod
     def build_game(self, data: Data) -> None:
         pass
 
@@ -97,6 +101,7 @@ class Game_strategy(ABC):
 class Menu(Game_strategy):
     def __str__(self) -> str:
         return "Menu"
+    
     def build_game(self, data: Data) -> None:
         data.data_menu() #wywolanie def. funkcji z obiektami menu. 
             
