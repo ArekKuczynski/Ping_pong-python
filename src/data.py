@@ -11,10 +11,6 @@ class Data():
         self.screen = pygame.display.set_mode((self.game_height, self.game_width))
         self.clock = pygame.time.Clock()
 
-    def data_reset(self) -> None:
-        self.clock_speed = 100
-        self.speed_up = 0
-
     def fonts(self) -> None:
         self.font_logo = pygame.font.Font('src/font/CONSOLA.TTF', 50)
         self.font_normal = pygame.font.Font(None, 35)
@@ -38,3 +34,7 @@ class Data():
         self.bottom_panel_surface.fill((26, 26, 26))
         self.restart_button = self.font_normal.render("Restart", True, "White")
         self.menu_button = self.font_normal.render("Menu", True, "White")
+
+    def data_reset(self) -> None:
+        self.clock_speed = 100
+        self.speed_up = 0

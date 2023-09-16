@@ -17,13 +17,7 @@ class Paddles():
 
         self.paddle_2_rect = self.paddle.get_rect(midtop = (760, self.paddle_2_posy))
 
-    def paddles_reset(self) -> None:
-        self.paddle_1_rect.y = self.y
-        self.paddle_2_rect.y = self.y
-
     def paddles_movement(self, data: data.Data) -> None:
-
-
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w] and self.paddle_1_rect.y >= 0:
             self.paddle_1_rect.y -= self.paddles_speed
@@ -34,3 +28,7 @@ class Paddles():
             self.paddle_2_rect.y -= self.paddles_speed
         if keys[pygame.K_DOWN] and self.paddle_2_rect.y + self.paddle_height <= data.game_height:
             self.paddle_2_rect.y += self.paddles_speed
+
+    def paddles_reset(self) -> None:
+        self.paddle_1_rect.y = self.y
+        self.paddle_2_rect.y = self.y
