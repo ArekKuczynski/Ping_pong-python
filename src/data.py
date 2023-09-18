@@ -1,14 +1,17 @@
 import pygame
 
+
 class Data():
     def __init__(self) -> None:
         self.game_width = 800
         self.game_height = 400
-        self.game_mode = 0 #game mode (0-load objects, 1-start/restart, 2-before run, 3-running )
+        # game mode (0-load objects, 1-start/restart, 2-before run, 3-running )
+        self.game_mode = 0
         self.clock_speed = 100
         self.speed_up = 0
 
-        self.screen = pygame.display.set_mode((self.game_height, self.game_width))
+        self.screen = pygame.display.set_mode(
+            (self.game_height, self.game_width))
         self.clock = pygame.time.Clock()
 
     def fonts(self) -> None:
@@ -19,7 +22,8 @@ class Data():
     def data_menu(self) -> None:
         self.fonts()
 
-        self.main_menu = pygame.Surface((self.game_height - 100, self.game_width))
+        self.main_menu = pygame.Surface(
+            (self.game_height - 100, self.game_width))
         self.main_menu.fill((26, 26, 26))
         self.logo_surface = self.font_logo.render("Ping pong", True, "White")
         self.play_button = pygame.Surface((100, 50))
